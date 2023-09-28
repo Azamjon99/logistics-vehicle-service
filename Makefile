@@ -1,5 +1,5 @@
 PWD=$(shell pwd)
-SERVICE=eater-svc
+SERVICE=vehicle-svc
 MIGRATION_PATH=${PWD}/src/infrastructure/migrations
 PROTOS_PATH=$(PWD)/src/infrastructure/protos
 
@@ -39,7 +39,7 @@ gen-vehicle:
 	$(PWD)/src/infrastructure/protos/logistic_vehicle/*.proto
 
 docker: 
-	docker build --rm -t eater-svc -f ${PWD}/deploy/Dockerfile .
+	docker build --rm -t vehicle-svc -f ${PWD}/deploy/Dockerfile .
 
 
 

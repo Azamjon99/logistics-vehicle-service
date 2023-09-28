@@ -38,7 +38,7 @@ func (s *svcImpl) CreateToken(ctx context.Context, subject string) (string, erro
 
 	claims := jwt.RegisteredClaims{
 		ID:        rand.UUID(),
-		Subject:   subject, // eg. eaterId
+		Subject:   subject, 
 		Issuer:    "food.uz",
 		IssuedAt:  jwt.NewNumericDate(issuedAt),
 		ExpiresAt: jwt.NewNumericDate(expiresAt),

@@ -1,18 +1,20 @@
--- eater schema
+-- support schema
 CREATE SCHEMA IF NOT EXISTS support;
 
--- ratings
-CREATE TABLE IF NOT EXISTS support.ratings (
+-- vehicle
+CREATE TABLE IF NOT EXISTS support.vehicle (
 	id varchar(36) PRIMARY KEY,
-    order_id VARCHAR(16),
-    rating VARCHAR(255),
-    comment VARCHAR(255),
+    driver_id VARCHAR(255),
+    model VARCHAR(255),
+    make VARCHAR(255),
+    PlateNumber VARCHAR(255),
+    ImageUrl VARCHAR(255),
 	created_at timestamp,
 	updated_at timestamp
 );
 
--- idx_order_rating
-CREATE INDEX IF NOT EXISTS idx_order_rating ON support.ratings(order_id);
+-- idx_driver_vehicle
+CREATE INDEX IF NOT EXISTS idx_driver_vehicle ON support.vehicle(driver_id);
 
 
 
